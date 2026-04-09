@@ -166,8 +166,8 @@
 @media (max-width: 767px) {
   .hero-container {
     min-height: 100svh;
-    padding-top: 76px;
-    padding-bottom: 24px;
+    padding-top: 72px;
+    padding-bottom: 18px;
   }
 
   .hero-copy {
@@ -213,20 +213,22 @@
   }
 
   .hero-image-backdrop {
-    object-position: center 8%;
-    filter: saturate(1.02) contrast(1.02) brightness(1.12);
+    object-fit: contain;
+    object-position: top center;
+    background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+    filter: saturate(1.02) contrast(1.02) brightness(1.08);
   }
 
   .hero-overlay {
     background:
-      linear-gradient(180deg, rgba(2, 6, 23, 0.24) 0%, rgba(15, 23, 42, 0.12) 55%, rgba(15, 23, 42, 0.16) 100%);
+      linear-gradient(180deg, rgba(2, 6, 23, 0.14) 0%, rgba(15, 23, 42, 0.08) 55%, rgba(15, 23, 42, 0.12) 100%);
   }
 }
 
 @media (max-width: 420px) {
   .hero-container {
-    padding-top: 68px;
-    padding-bottom: 20px;
+    padding-top: 66px;
+    padding-bottom: 16px;
   }
 
   .hero-copy {

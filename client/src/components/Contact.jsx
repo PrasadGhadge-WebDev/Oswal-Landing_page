@@ -1,124 +1,158 @@
 import React from 'react';
-import { Mail, Phone, MapPin, Send, MessageCircle } from 'lucide-react';
+import { Mail, Navigation2, Phone, MessageCircle } from 'lucide-react';
 import './Contact.css';
 
 const Contact = () => {
-  const whatsappNumber = "917383598553";
-  const whatsappMsg = encodeURIComponent("Hello Oswal Tiles, I'm interested in your tile collections!");
+  const contactNumber = '919766875355';
+
+  const buildMessage = (form) => {
+    const data = new FormData(form);
+    const name = data.get('name')?.toString().trim();
+    const phone = data.get('phone')?.toString().trim();
+    const service = data.get('service')?.toString().trim();
+    const message = data.get('message')?.toString().trim();
+
+    return [
+      'Hello Oswal Tiles, I am interested in your products.',
+      name ? `Name: ${name}` : null,
+      phone ? `Phone: ${phone}` : null,
+      service ? `Service Needed: ${service}` : null,
+      message ? `Message: ${message}` : null,
+    ]
+      .filter(Boolean)
+      .join('\n');
+  };
+
+  const openMessageChannel = (platform, event) => {
+    event.preventDefault();
+    const form = event.currentTarget.form;
+
+    if (!form) return;
+
+    const data = new FormData(form);
+    const name = data.get('name')?.toString().trim();
+    const phone = data.get('phone')?.toString().trim();
+
+    // Validation
+    if (!name) {
+      alert('Please enter your full name.');
+      return;
+    }
+
+    if (!phone || !/^\d{10}$/.test(phone.replace(/\D/g, ''))) {
+      alert('Please enter a valid 10-digit phone number.');
+      return;
+    }
+
+    const message = buildMessage(form);
+    const encodedMessage = encodeURIComponent(message);
+    const url =
+      platform === 'sms'
+        ? `sms:+${contactNumber}?body=${encodedMessage}`
+        : `https://wa.me/${contactNumber}?text=${encodedMessage}`;
+
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
 
   return (
     <section id="contact" className="contact-section">
       <div className="container">
         <div className="contact-grid">
-
-          {/* Contact Info */}
-          <div className="contact-info">
-            <h2 className="section-title section-title-left mb-6">
-              Visit Our <span className="text-[#D20A10]">Studio</span>
-            </h2>
+            <div className="contact-info">
+              <p className="contact-kicker">Map Location</p>
+            <h2 className="contact-map-title">Visit Our Baramati Showroom</h2>
             <p className="contact-info-text">
-              Have a project in mind? Visit our showroom in Baramati for a physical
-              consultation or drop us a message online. We're here to help you
-              build your dream space.
+              Find us on the map, get directions, or call the store directly.
             </p>
 
-            <div className="contact-methods">
-              <a
-                href="https://www.google.com/maps/search/?api=1&query=5H6P%2B8Q+Baramati,+Maharashtra"
-                target="_blank"
-                rel="noreferrer"
-                className="contact-method-item"
-              >
-                <div className="contact-icon-wrapper">
-                  <MapPin size={24} />
-                </div>
-                <div>
-                  <h4 className="contact-method-title">Our Location</h4>
-                  <p className="contact-method-value">
-                    Vishwa Empire Building, Opposite TVS Showroom,<br />
-                    Bhigwan Road, Baramati HO, Baramati - 413102
-                  </p>
-                  <span className="text-xs font-bold text-[#D20A10] uppercase tracking-wider mt-1 inline-block">
-                    Get Directions →
-                  </span>
-                </div>
-              </a>
-
-              <div className="contact-method-item">
-                <div className="contact-icon-wrapper">
-                  <Phone size={24} />
-                </div>
-                <div>
-                  <h4 className="contact-method-title">Call Us</h4>
-                  <p className="contact-method-value">+91 73835 98553</p>
-                </div>
-              </div>
-
-              <div className="contact-method-item">
-                <div className="contact-icon-wrapper">
-                  <Mail size={24} />
-                </div>
-                <div>
-                  <h4 className="contact-method-title">Email Enquiry</h4>
-                  <p className="contact-method-value">info@oswaltiles.com</p>
-                </div>
+            <div className="contact-map-wrapper">
+              <div className="map-bg-decoration" />
+              <div className="contact-map-card">
+                <iframe
+                  title="Oswal Tiles location map"
+                  className="contact-map-iframe"
+                  src="https://www.google.com/maps?q=18.160778154676212,74.58693038091967&z=16&output=embed"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
               </div>
             </div>
 
-            {/* Quick WhatsApp Action */}
-            {/* <div className="whatsapp-action-card">
-               <div className="whatsapp-icon-bg">
-                 <MessageCircle size={32} />
-               </div>
-               <div>
-                  <h3 className="whatsapp-card-title">Quick WhatsApp Enquiry</h3>
-                  <p className="whatsapp-card-text">Get instant quotes and product catalogs.</p>
-                  <a 
-                    href={`https://wa.me/${whatsappNumber}?text=${whatsappMsg}`} 
-                    target="_blank" 
-                    rel="noreferrer"
-                    className="btn whatsapp-btn"
-                  >
-                    Chat on WhatsApp
-                  </a>
-               </div>
-            </div> */}
+
+            <div className="contact-map-actions">
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=18.160778154676212,74.58693038091967"
+                target="_blank"
+                rel="noreferrer"
+                className="contact-map-button contact-map-button-primary"
+              >
+                <Navigation2 size={18} />
+                <span>Directions</span>
+              </a>
+            </div>
+
           </div>
 
-          {/* Contact Form */}
           <div className="contact-form-container">
             <h3 className="contact-form-title">Send a Message</h3>
-            <form className="contact-form">
+            <form className="contact-form" onSubmit={(event) => event.preventDefault()}>
               <div className="form-row">
                 <div className="form-group">
                   <label className="form-label">Full Name</label>
-                  <input type="text" className="form-input" placeholder="John Doe" />
+                  <input
+                    type="text"
+                    name="name"
+                    required
+                    className="form-input"
+                    placeholder="Enter your name"
+                    onInput={(e) => {
+                      e.target.value = e.target.value.replace(/[^a-zA-Z\s]/g, '');
+                    }}
+                  />
                 </div>
                 <div className="form-group">
                   <label className="form-label">Phone Number</label>
-                  <input type="tel" className="form-input" placeholder="+91 00000 00000" />
+                  <input
+                    type="tel"
+                    name="phone"
+                    required
+                    pattern="[0-9]{10}"
+                    className="form-input"
+                    placeholder="Enter your phone"
+                    onInput={(e) => {
+                      e.target.value = e.target.value.replace(/\D/g, '').slice(0, 10);
+                    }}
+                  />
                 </div>
-              </div>
-              <div className="form-group">
-                <label className="form-label">Service Needed</label>
-                <select className="form-select">
-                  <option>Vitrified Tiles</option>
-                  <option>PGVT Designer Tiles</option>
-                  <option>Wooden Flooring</option>
-                  <option>Kitchen Sinks / Sinks</option>
-                </select>
+
               </div>
               <div className="form-group">
                 <label className="form-label">Your Message</label>
-                <textarea className="form-textarea" placeholder="Tell us about your project..."></textarea>
+                <textarea
+                  className="form-textarea"
+                  name="message"
+                  placeholder="Tell us about your project..."
+                ></textarea>
               </div>
-              <button type="submit" className="btn btn-primary submit-btn">
-                Send Enquiry
-                <Send size={20} />
-              </button>
+              <div className="contact-action-row">
+                <button
+                  type="button"
+                  className="btn btn-primary submit-btn"
+                  onClick={(event) => openMessageChannel('whatsapp', event)}
+                >
+                  Send on WhatsApp
+                  <MessageCircle size={20} />
+                </button>
+                <a
+                  className="btn btn-outline submit-btn submit-btn-secondary"
+                  href="tel:+919766875355"
+                >
+                  Call Us
+                  <Phone size={20} />
+                </a>
+              </div>
             </form>
           </div>
-
         </div>
       </div>
     </section>

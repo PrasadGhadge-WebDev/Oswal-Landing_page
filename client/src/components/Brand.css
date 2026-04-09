@@ -74,6 +74,17 @@
   opacity: 0.9;
 }
 
+.dark-mode .brand-logo-panel {
+  background:
+    radial-gradient(circle at top left, rgba(210, 10, 16, 0.14) 0%, transparent 52%),
+    linear-gradient(180deg, #0f172a 0%, #111827 100%);
+  border-color: color-mix(in srgb, var(--brand-accent, var(--brand-red)) 28%, #334155);
+}
+
+.dark-mode .brand-logo-mark {
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+}
+
 .brand-name {
   text-align: center;
   font-family: 'Outfit', sans-serif;
@@ -92,5 +103,29 @@
 @media (min-width: 1024px) {
   .brand-logo-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .brand-section {
+    padding: 72px 0;
+  }
+
+  .brand-logo-panel {
+    height: 130px;
+  }
+}
+
+@media (max-width: 420px) {
+  .brand-section {
+    padding: 56px 0;
+  }
+
+  .brand-logo-card {
+    padding: 12px;
+  }
+
+  .brand-logo-panel {
+    height: 120px;
   }
 }

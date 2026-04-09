@@ -63,3 +63,23 @@
   font-size: 0.875rem;
   line-height: 1.625;
 }
+
+@media (max-width: 767px) {
+  .features-section {
+    padding: 72px 0;
+  }
+
+  .feature-card {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 420px) {
+  .features-section {
+    padding: 56px 0;
+  }
+
+  .feature-card {
+    padding: 20px;
+  }
+}

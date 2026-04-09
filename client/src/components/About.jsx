@@ -20,14 +20,15 @@ const About = () => {
                 alt="Oswal Tiles showroom storefront"
                 className="about-image"
               />
-            </div>
-            <div className="about-badge about-badge-top">
-              <Store size={16} />
-              <span>Designer Studio</span>
-            </div>
-            <div className="about-badge about-badge-bottom">
-              <MapPin size={16} />
-              <span>Baramati, Maharashtra</span>
+              <div className="about-overlay" />
+              <div className="about-chip about-chip-top">
+                <Store size={16} />
+                <span>Designer Studio</span>
+              </div>
+              <div className="about-chip about-chip-bottom">
+                <MapPin size={16} />
+                <span>Baramati, Maharashtra</span>
+              </div>
             </div>
           </div>
 

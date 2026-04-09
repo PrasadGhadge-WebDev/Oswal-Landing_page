@@ -1,12 +1,12 @@
 .contact-section {
-  padding: 96px 0;
+  padding: 36px 0 60px;
   background-color: var(--bg-main);
 }
 
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 64px;
+  gap: 32px;
   align-items: flex-start;
 }
 
@@ -16,98 +16,117 @@
   }
 }
 
+.contact-kicker {
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--brand-red);
+  margin-bottom: 10px;
+}
+
+.contact-map-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.8rem, 3.2vw, 2.8rem);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  color: var(--text-main);
+  margin-bottom: 14px;
+}
+
 .contact-info-text {
   color: var(--text-secondary);
-  font-size: 1.125rem; /* lg */
-  margin-bottom: 40px;
-  line-height: 1.625;
+  font-size: 1.05rem;
+  margin-bottom: 22px;
+  line-height: 1.65;
+}
+.contact-map-wrapper {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 22px;
 }
 
-.contact-methods {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
+.map-bg-decoration {
+  position: absolute;
+  top: -24px;
+  right: -24px;
+  width: 100px;
+  height: 100px;
+  background-color: var(--brand-red);
+  opacity: 0.08;
+  border-radius: 32px;
+  z-index: -1;
+  transform: rotate(12deg);
 }
 
-.contact-method-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 20px;
+/* Add a second one for balance */
+.contact-map-wrapper::after {
+  content: '';
+  position: absolute;
+  bottom: -18px;
+  left: -18px;
+  width: 70px;
+  height: 70px;
+  background-color: var(--brand-red);
+  opacity: 0.05;
+  border-radius: 24px;
+  z-index: -1;
+  transform: rotate(-8deg);
 }
 
-.contact-icon-wrapper {
-  padding: 16px;
-  background-color: rgba(210, 10, 16, 0.05); /* brand-red/5 */
-  color: var(--brand-red);
-  border-radius: 1rem; /* 2xl */
+.contact-map-card {
+  border-radius: 26px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  background: var(--card-bg);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
 }
 
-.contact-method-title {
-  font-size: 1.125rem;
-  font-weight: 700;
-  margin-bottom: 4px;
-  color: var(--text-main);
+.contact-map-iframe {
+  width: 100%;
+  height: 280px;
+  border: 0;
+  display: block;
 }
 
-.contact-method-value {
-  color: var(--text-secondary);
+.contact-map-actions {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin-top: 16px;
 }
 
-/* WhatsApp Action Card */
-.whatsapp-action-card {
-  margin-top: 48px;
-  padding: 32px;
-  background-color: rgba(37, 211, 102, 0.05); /* whatsapp-green/5 */
-  border-radius: 1.5rem; /* 3xl */
-  border: 1px solid rgba(37, 211, 102, 0.2);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 16px;
-}
-
-.whatsapp-icon-bg {
-  width: 64px;
-  height: 64px;
-  background-color: #25D366;
-  color: #ffffff;
-  border-radius: 9999px;
-  display: flex;
+.contact-map-button {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto;
-  box-shadow: 0 10px 15px -3px rgba(37, 211, 102, 0.4);
+  gap: 12px;
+  width: 100%;
+  padding: 12px 18px;
+  border-radius: 14px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 800;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
 }
 
-.whatsapp-card-title {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--text-main);
-}
-
-.whatsapp-card-text {
-  color: var(--text-secondary);
-  margin-bottom: 24px;
-  font-weight: 500;
-}
-
-.whatsapp-btn {
-  background-color: #25D366;
+.contact-map-button-primary {
+  background: #e31b23;
   color: #ffffff;
-  padding-left: 40px;
-  padding-right: 40px;
-  box-shadow: 0 20px 25px -5px rgba(37, 211, 102, 0.2);
+  box-shadow: 0 16px 30px rgba(227, 27, 35, 0.22);
 }
 
-.whatsapp-btn:hover {
-  background-color: #128C7E;
+.contact-map-button-secondary {
+  background: var(--bg-main);
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
 }
 
 /* Contact Form */
 .contact-form-container {
   background-color: var(--bg-secondary);
-  padding: 40px;
+  padding: 28px;
   border-radius: 1.5rem; /* 3xl */
   border: 1px solid var(--border-color);
   box-shadow: var(--card-shadow);
@@ -123,7 +142,7 @@
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 18px;
 }
 
 .form-row {
@@ -151,7 +170,7 @@
 }
 
 .form-input, .form-select, .form-textarea {
-  padding: 16px;
+  padding: 12px;
   border-radius: 0.75rem; /* xl */
   border: 1px solid var(--border-color);
   outline: none;
@@ -165,14 +184,98 @@
 }
 
 .form-textarea {
-  min-height: 150px;
+  min-height: 120px;
   resize: vertical;
 }
 
 .submit-btn {
   width: 100%;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  font-size: 1.125rem;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  font-size: 1rem;
   box-shadow: 0 25px 50px -12px rgba(210, 10, 16, 0.25);
+}
+
+.contact-action-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.submit-btn-secondary {
+  box-shadow: none;
+}
+
+@media (min-width: 768px) {
+  .contact-map-actions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .contact-action-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .contact-map-iframe {
+    height: 320px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 12px 0 40px;
+  }
+
+  .contact-grid {
+    gap: 28px;
+  }
+
+  .contact-map-title {
+    font-size: 1.6rem;
+  }
+
+  .contact-info-text {
+    font-size: 0.9rem;
+    margin-bottom: 16px;
+  }
+
+  .contact-map-iframe {
+    height: 240px;
+  }
+
+  .contact-form-container {
+    padding: 20px;
+  }
+
+  .form-row {
+    gap: 16px;
+  }
+
+  .form-label {
+    font-size: 0.8rem;
+  }
+
+  .form-input, .form-textarea {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .submit-btn {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-size: 0.95rem;
+  }
+}
+
+.dark-mode .contact-map-card {
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+}
+
+.dark-mode .contact-map-button-secondary {
+  background: var(--card-bg);
+}
+
+.dark-mode .contact-form-container {
+  background-color: var(--card-bg);
 }

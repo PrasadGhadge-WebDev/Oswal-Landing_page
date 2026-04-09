@@ -19,9 +19,9 @@ const Spotlight = () => {
               A showroom visual that helps customers picture the final space.
             </h2>
             <p className="spotlight-text">
-              We added a large lifestyle image to the project so the site feels
-              more like a premium showroom presentation and less like a plain
-              product list.
+              Experience our curated collection of luxury surfaces, designed to 
+              bring sophisticated styling and lasting durability to every corner 
+              of your project.
             </p>
 
             <ul className="spotlight-list">

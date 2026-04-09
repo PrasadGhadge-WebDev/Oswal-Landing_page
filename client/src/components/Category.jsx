@@ -1,23 +1,32 @@
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
 import './Category.css';
 
 const categories = [
   {
-    name: 'Tiles',
-    image: '/tiles.png',
+    name: 'Kitchen Sinks',
+    image: '/categories/kitchen_sink.png',
+    accent: '#0D9488',
+    description: 'Clean, durable sink options for everyday kitchen use.',
+  },
+  {
+    name: 'Floor Tiles',
+    image: '/categories/floor_tiles.png',
+    accent: '#2563EB',
+    description: 'Strong, low-maintenance finishes for busy homes.',
+  },
+  {
+    name: 'Parking Tiles',
+    image: '/categories/parking_tiles.png',
     accent: '#B91C1C',
-    description: 'A wide tile selection with strong visual texture.',
+    description: 'Durable, stylish options designed for parking and outdoor surfaces.',
   },
   {
     name: 'Wall Tiles',
-    image: '/WhatsApp Image 2026-04-08 at.jpeg',
+    image: '/categories/tiles.png',
     accent: '#7C3AED',
-    description: 'Elegant wall surfaces for bathrooms and feature areas.',
+    description: 'Elegant wall surfaces for bathrooms and accent spaces.',
   },
 ];
-
-
 
 const Category = () => {
   return (
@@ -45,15 +54,12 @@ const Category = () => {
                 <div className="category-overlay" />
                 <div className="category-label">
                   <span>{category.name}</span>
-                  <ArrowRight size={16} />
                 </div>
               </div>
               <p className="category-description">{category.description}</p>
             </article>
           ))}
         </div>
-
-
       </div>
     </section>
   );

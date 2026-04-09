@@ -20,7 +20,15 @@
   --glass-bg: rgba(255, 255, 255, 0.75);
   --glass-border: rgba(226, 232, 240, 0.8);
   --navbar-bg: rgba(255, 255, 255, 0.96);
+  --safe-padding: 2rem;
 }
+
+@media (max-width: 768px) {
+  :root {
+    --safe-padding: 1rem;
+  }
+}
+
 
 .dark-mode {
   --bg-main: #0F172A;
@@ -100,6 +108,14 @@ img {
   gap: 10px;
 }
 
+@media (max-width: 768px) {
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.92rem;
+  }
+}
+
+
 .btn-primary {
   background-color: var(--brand-red);
   color: white;
@@ -148,6 +164,14 @@ img {
   text-align: center;
   position: relative;
 }
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+}
+
 
 .section-title::after {
   content: '';

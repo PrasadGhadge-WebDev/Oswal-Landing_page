@@ -10,11 +10,11 @@
   -webkit-backdrop-filter: blur(14px);
   box-shadow: 0 8px 22px rgba(15, 23, 42, 0.08);
   transition: padding 0.28s ease, box-shadow 0.28s ease, background-color 0.28s ease, border-color 0.28s ease;
-  padding: 0;
+  padding: 2px 0;
 }
 
 .navbar-scrolled {
-  padding: 0;
+  padding: 1px 0;
   box-shadow: 0 10px 26px rgba(15, 23, 42, 0.08);
 }
 
@@ -37,7 +37,7 @@
 
 .navbar-logo {
   display: block;
-  width: 88px;
+  width: 72px;
   height: auto;
   object-fit: contain;
   flex-shrink: 0;
@@ -381,15 +381,15 @@ html:not(.dark-mode) .theme-toggle {
 
 @media (min-width: 768px) {
   .navbar {
-    padding: 0;
+    padding: 2px 0;
   }
 
   .navbar-scrolled {
-    padding: 0;
+    padding: 1px 0;
   }
 
   .navbar-logo {
-    width: 88px;
+    width: 84px;
   }
 
   .navbar-links {
@@ -412,7 +412,7 @@ html:not(.dark-mode) .theme-toggle {
 
 @media (min-width: 1024px) {
   .navbar-logo {
-    width: 94px;
+    width: 92px;
   }
 
   .navbar-container {
@@ -440,8 +440,8 @@ html:not(.dark-mode) .theme-toggle {
   }
 
   .navbar-logo {
-    width: 52px;
-    height: 52px;
+    width: 50px;
+    height: 50px;
   }
 
   .navbar-brand-copy {

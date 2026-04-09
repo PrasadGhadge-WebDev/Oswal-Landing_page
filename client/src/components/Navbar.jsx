@@ -11,6 +11,9 @@ const navLinks = [
   { name: 'Contact', href: '#contact', icon: MessageSquare },
 ];
 
+const contactNumber = '917383598553';
+const contactDisplayNumber = '07383598553';
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -78,21 +81,21 @@ const Navbar = () => {
         </div>
 
         <div className="navbar-actions">
-          <button 
-            className="theme-toggle" 
+          <button
+            className="theme-toggle"
             onClick={toggleTheme}
             aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
           >
             {theme === 'light' ? <Moon size={18} /> : <Sun size={18} />}
           </button>
-          <a className="navbar-call" href="tel:+917383598553">
+          <a className="navbar-call" href={`tel:+${contactNumber}`}>
             <span>📞 Call Now</span>
           </a>
           <div className="navbar-divider" aria-hidden="true" />
-          <a 
-            className="navbar-cta" 
-            href="https://www.google.com/maps/search/?api=1&query=5H6P%2B8Q+Baramati,+Maharashtra" 
-            target="_blank" 
+          <a
+            className="navbar-cta"
+            href="https://www.google.com/maps/search/?api=1&query=18.160778154676212,74.58693038091967"
+            target="_blank"
             rel="noreferrer"
           >
             <span>📍 Visit Store</span>
@@ -129,8 +132,8 @@ const Navbar = () => {
           </div>
 
           <div className="navbar-mobile-actions">
-            <button 
-              className="navbar-mobile-theme-toggle" 
+            <button
+              className="navbar-mobile-theme-toggle"
               onClick={toggleTheme}
               aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
             >
@@ -146,13 +149,13 @@ const Navbar = () => {
                 </>
               )}
             </button>
-            <a className="navbar-mobile-call" href="tel:+917383598553" onClick={closeMenu}>
-              <span>📞 Call +91 73835 98553</span>
+            <a className="navbar-mobile-call" href={`tel:+${contactNumber}`} onClick={closeMenu}>
+              <span>📞 Call {contactDisplayNumber}</span>
             </a>
-            <a 
-              className="navbar-mobile-cta" 
-              href="https://www.google.com/maps/search/?api=1&query=5H6P%2B8Q+Baramati,+Maharashtra" 
-              target="_blank" 
+            <a
+              className="navbar-mobile-cta"
+              href="https://www.google.com/maps/search/?api=1&query=18.160778154676212,74.58693038091967"
+              target="_blank"
               rel="noreferrer"
             >
               <span>📍 Visit Store</span>

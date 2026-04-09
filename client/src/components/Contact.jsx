@@ -2,9 +2,9 @@ import React from 'react';
 import { Mail, Navigation2, Phone, MessageCircle } from 'lucide-react';
 import './Contact.css';
 
-const Contact = () => {
-  const contactNumber = '919766875355';
+const contactNumber = '917383598553';
 
+const Contact = () => {
   const buildMessage = (form) => {
     const data = new FormData(form);
     const name = data.get('name')?.toString().trim();
@@ -33,7 +33,6 @@ const Contact = () => {
     const name = data.get('name')?.toString().trim();
     const phone = data.get('phone')?.toString().trim();
 
-    // Validation
     if (!name) {
       alert('Please enter your full name.');
       return;
@@ -58,8 +57,8 @@ const Contact = () => {
     <section id="contact" className="contact-section">
       <div className="container">
         <div className="contact-grid">
-            <div className="contact-info">
-              <p className="contact-kicker">Map Location</p>
+          <div className="contact-info">
+            <p className="contact-kicker">Map Location</p>
             <h2 className="contact-map-title">Visit Our Baramati Showroom</h2>
             <p className="contact-info-text">
               Find us on the map, get directions, or call the store directly.
@@ -78,7 +77,6 @@ const Contact = () => {
               </div>
             </div>
 
-
             <div className="contact-map-actions">
               <a
                 href="https://www.google.com/maps/search/?api=1&query=18.160778154676212,74.58693038091967"
@@ -90,7 +88,6 @@ const Contact = () => {
                 <span>Directions</span>
               </a>
             </div>
-
           </div>
 
           <div className="contact-form-container">
@@ -124,7 +121,6 @@ const Contact = () => {
                     }}
                   />
                 </div>
-
               </div>
               <div className="form-group">
                 <label className="form-label">Your Message</label>
@@ -145,9 +141,9 @@ const Contact = () => {
                 </button>
                 <a
                   className="btn btn-outline submit-btn submit-btn-secondary"
-                  href="tel:+919766875355"
+                  href={`tel:+${contactNumber}`}
                 >
-                  Call Us
+                  Call 07383598553
                   <Phone size={20} />
                 </a>
               </div>

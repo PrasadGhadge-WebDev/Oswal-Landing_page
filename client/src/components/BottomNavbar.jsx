@@ -2,7 +2,7 @@ import React from 'react';
 import { MessageCircle, Phone } from 'lucide-react';
 import './BottomNavbar.css';
 
-const contactNumber = '919766875355';
+const contactNumber = '917383598553';
 
 const BottomNavbar = () => {
   const whatsappMessage = encodeURIComponent(

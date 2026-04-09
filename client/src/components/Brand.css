@@ -1,0 +1,96 @@
+.brand-section {
+  padding: 96px 0;
+  background: linear-gradient(180deg, var(--bg-main) 0%, var(--bg-secondary) 100%);
+}
+
+.brand-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.brand-kicker {
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--brand-red);
+  margin-bottom: 10px;
+}
+
+.brand-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+  color: var(--text-main);
+}
+
+.brand-logo-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+.brand-logo-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 16px;
+  border-radius: 24px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--card-shadow);
+}
+
+.brand-logo-panel {
+  height: 150px;
+  border-radius: 18px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at top left, var(--brand-tint, rgba(210, 10, 16, 0.10)) 0%, transparent 52%),
+    linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  border: 1px solid color-mix(in srgb, var(--brand-accent, var(--brand-red)) 24%, white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px;
+  position: relative;
+}
+
+.brand-logo-mark {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 8px 18px color-mix(in srgb, var(--brand-accent, var(--brand-red)) 18%, transparent));
+}
+
+.brand-logo-panel::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 7px;
+  background: linear-gradient(90deg, transparent, var(--brand-accent, var(--brand-red)), transparent);
+  opacity: 0.9;
+}
+
+.brand-name {
+  text-align: center;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+}
+
+@media (min-width: 640px) {
+  .brand-logo-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .brand-logo-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}

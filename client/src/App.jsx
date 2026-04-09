@@ -7,6 +7,7 @@ import Features from './components/Features'
 import About from './components/About'
 import Contact from './components/Contact'
 import Spotlight from './components/Spotlight'
+import BottomNavbar from './components/BottomNavbar'
 import Footer from './components/Footer'
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Features />
         <Contact />
       </main>
+      <BottomNavbar />
       <Footer />
     </div>
   )

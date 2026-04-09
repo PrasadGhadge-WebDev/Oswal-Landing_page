@@ -1,10 +1,8 @@
 import React from 'react';
 import {
   Award,
-  Camera,
   ChevronRight,
   ChevronUp,
-  Globe,
   Home,
   Mail,
   MapPin,
@@ -22,6 +20,23 @@ const quickLinks = [
   { href: '#spotlight', label: 'Featured Collection', icon: Sparkles },
   { href: '#contact', label: 'Contact Support', icon: MessageSquare },
 ];
+
+const SocialInstagramIcon = () => (
+  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+    <rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" strokeWidth="2" />
+    <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" strokeWidth="2" />
+    <circle cx="17" cy="7" r="1.3" fill="currentColor" />
+  </svg>
+);
+
+const SocialFacebookIcon = () => (
+  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+    <path
+      d="M14 8.5V7c0-.8.6-1.4 1.4-1.4H17V2h-2.6C11.6 2 10 3.6 10 6.1v2.4H7v3.6h3V22h4.1v-9.9h3l.5-3.6H14z"
+      fill="currentColor"
+    />
+  </svg>
+);
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -45,11 +60,23 @@ const Footer = () => {
               and interior product options for homes and projects.
             </p>
             <div className="footer-socials">
-              <a href="#" className="social-link" aria-label="Instagram">
-                <Camera size={20} />
+              <a
+                href="https://www.instagram.com/"
+                className="social-link"
+                aria-label="Instagram"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <SocialInstagramIcon />
               </a>
-              <a href="#" className="social-link" aria-label="Website">
-                <Globe size={20} />
+              <a
+                href="https://www.facebook.com/"
+                className="social-link"
+                aria-label="Facebook"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <SocialFacebookIcon />
               </a>
             </div>
           </div>

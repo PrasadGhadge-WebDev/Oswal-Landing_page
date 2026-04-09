@@ -51,7 +51,7 @@ const Footer = () => {
                      <li><a href="#" className="footer-link">PGVT Designer Series</a></li>
                      <li><a href="#" className="footer-link">Wooden Plank Tiles</a></li>
                      <li><a href="#" className="footer-link">Glazed Vitrified</a></li>
-                     <li><a href="#" className="footer-link">Nirali NG Sinks</a></li>
+
                   </ul>
                </div>
 

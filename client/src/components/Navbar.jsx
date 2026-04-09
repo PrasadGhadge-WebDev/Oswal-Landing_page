@@ -63,7 +63,6 @@ const Navbar = () => {
           />
           <span className="navbar-brand-copy">
             <span className="navbar-brand-title">Oswal Tiles</span>
-            <span className="navbar-brand-subtitle">Designer Studio, Baramati</span>
           </span>
         </a>
 

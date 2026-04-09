@@ -48,7 +48,7 @@ const Category = () => {
                   src={category.image}
                   alt={category.name}
                   className="category-image"
-                  loading="lazy"
+                  loading="eager"
                   decoding="async"
                 />
                 <div className="category-overlay" />

@@ -1,5 +1,5 @@
 import React from 'react';
-import { BadgeCheck, MapPin, Sparkles, Store } from 'lucide-react';
+import { BadgeCheck, MapPin, Sparkles } from 'lucide-react';
 import './About.css';
 
 const aboutHighlights = [
@@ -21,10 +21,6 @@ const About = () => {
                 className="about-image"
               />
               <div className="about-overlay" />
-              <div className="about-chip about-chip-top">
-                <Store size={16} />
-                <span>Designer Studio</span>
-              </div>
               <div className="about-chip about-chip-bottom">
                 <MapPin size={16} />
                 <span>Baramati, Maharashtra</span>

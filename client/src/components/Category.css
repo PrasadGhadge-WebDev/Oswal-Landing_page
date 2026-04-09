@@ -35,21 +35,21 @@
 
 .category-card {
   padding: 12px;
-  border-radius: 24px;
+  border-radius: 16px;
   background: var(--card-bg);
-  border: 1px solid var(--border-color);
+  border: 2px solid color-mix(in srgb, var(--brand-red) 18%, var(--border-color));
   box-shadow: var(--card-shadow);
 }
 
 .category-media {
   position: relative;
   overflow: hidden;
-  border-radius: 18px;
+  border-radius: 12px;
   height: 320px;
   background:
     radial-gradient(circle at top left, rgba(255, 255, 255, 0.95) 0%, transparent 40%),
     linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
-  border: 1px solid rgba(148, 163, 184, 0.24);
+  border: 2px solid color-mix(in srgb, var(--brand-red) 14%, rgba(148, 163, 184, 0.24));
 }
 
 .category-image {
@@ -84,7 +84,7 @@
   justify-content: center;
   gap: 0;
   padding: 10px 14px;
-  border-radius: 999px;
+  border-radius: 12px;
   color: #ffffff;
   font-family: 'Outfit', sans-serif;
   font-size: 0.98rem;
@@ -106,7 +106,7 @@
   background:
     radial-gradient(circle at top left, rgba(255, 255, 255, 0.05) 0%, transparent 40%),
     linear-gradient(180deg, #0f172a 0%, #111827 100%);
-  border-color: var(--border-color);
+  border-color: color-mix(in srgb, var(--brand-red) 18%, var(--border-color));
 }
 
 .dark-mode .category-image {
